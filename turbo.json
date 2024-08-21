@@ -1,0 +1,44 @@
+{
+  "tasks": {
+    "build": {
+      "dependsOn": ["lint", "typecheck", "format"],
+      "env": [
+        "NODE_ENV",
+        "PORT",
+
+        "DATABASE_URL",
+        "DIRECT_DATABASE_URL",
+        "AUTH_SECRET",
+        "AUTH_RESEND_KEY",
+        "ALLOWED_DOMAINS",
+        "SENTRY_AUTH_TOKEN",
+        "STRIPE_PUBLIC_KEY",
+        "STRIPE_SECRET_KEY",
+        "NEXT_PUBLIC_BYTESCALE_API_KEY",
+        "NEXT_PUBLIC_BYTESCALE_ACCOUNT_ID",
+        "NEXT_PUBLIC_BASE_URL"
+      ]
+    },
+    "format": {},
+    "lint": {},
+    "migrate": {},
+    "test": {
+      "dependsOn": ["build"]
+    },
+    "typecheck": {}
+  },
+  "globalEnv": [
+    "NODE_ENV",
+    "PORT",
+    "DATABASE_URL",
+    "DIRECT_DATABASE_URL",
+    "AUTH_SECRET",
+    "AUTH_RESEND_KEY",
+    "ALLOWED_DOMAINS",
+    "SENTRY_AUTH_TOKEN",
+    "STRIPE_PUBLIC_KEY",
+    "STRIPE_SECRET_KEY",
+    "NEXT_PUBLIC_BYTESCALE_API_KEY",
+    "NEXT_PUBLIC_BASE_URL"
+  ]
+}
