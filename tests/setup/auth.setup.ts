@@ -2,7 +2,7 @@ import { test as setup, expect } from '@playwright/test'
 import MailSlurp from 'mailslurp-client'
 import { JSDOM } from 'jsdom'
 
-const authFile = 'playwright/.auth/guest.json'
+const authFile = './guest.json'
 
 setup('authenticate', async ({ page }) => {
   // load playground app
@@ -10,10 +10,11 @@ setup('authenticate', async ({ page }) => {
   if (!BASE_URL) throw new Error('BASE_URL undefined')
   await page.goto(BASE_URL)
 
-  // create a new inbox
   const apiKey = process.env.MAILSLURP_API_KEY
   if (!apiKey) throw new Error('apiKey undefined')
   const mailslurp = new MailSlurp({ apiKey })
+  
+  // create a new inbox
   // const { id, emailAddress } = await mailslurp.createInbox()
   const id = process.env.EMAIL_ID
   const emailAddress = process.env.EMAIL_ADDRESS

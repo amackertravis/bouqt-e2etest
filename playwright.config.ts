@@ -46,9 +46,9 @@ export default defineConfig({
       use: {
         ...devices['Desktop Chrome'],
         // Use prepared auth state.
-        storageState: 'playwright/.auth/guest.json',
+        storageState: './setup/guest.json',
       },
-      dependencies: ['setup'],
+      // dependencies: ['setup'],
     },
 
     {
@@ -56,9 +56,9 @@ export default defineConfig({
       use: {
         ...devices['Desktop Firefox'],
         // Use prepared auth state.
-        storageState: 'playwright/.auth/guest.json',
+        storageState: './setup/guest.json',
       },
-      dependencies: ['setup'],
+      // dependencies: ['setup'],
     },
 
     // {
